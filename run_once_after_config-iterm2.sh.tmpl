@@ -1,0 +1,6 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile_selection -int 0
+{{ end -}}

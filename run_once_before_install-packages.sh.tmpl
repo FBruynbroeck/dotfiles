@@ -1,0 +1,42 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+if ! command -v brew &> /dev/null
+then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+brew tap homebrew/cask-drivers
+brew tap homebrew/cask-fonts
+brew bundle --no-lock --file=/dev/stdin <<EOF
+brew "ack"
+brew "bzip2"
+brew "git"
+brew "git-octopus"
+brew "node"
+{{ if eq .chezmoi.arch "arm64" -}}
+brew "nutcracker/tap/openssl@1.0"
+{{ else -}}
+brew "mjpieters/tap/openssl@1.0"
+{{ end -}}
+brew "pyenv"
+brew "pyenv-virtualenv"
+brew "pyright"
+brew "tmux"
+brew "vim"
+brew "zlib"
+cask "font-jetbrains-mono-nerd-font"
+{{ if .brew_gui -}}
+cask "dropbox"
+cask "google-chrome"
+cask "iterm2"
+cask "keepassxc"
+cask "maccy"
+cask "microsoft-teams"
+cask "slack"
+cask "spotify"
+cask "synology-drive"
+cask "thunderbird"
+cask "viscosity"
+{{ end -}}
+EOF
+{{ end -}}

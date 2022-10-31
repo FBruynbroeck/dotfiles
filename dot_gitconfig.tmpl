@@ -1,0 +1,34 @@
+[include]
+	path = ~/.gitconfig.local
+[user]
+	name = {{ .nickname }}
+	email = {{ .email }}
+[core]
+	ignorecase = false
+	excludesfile = ~/.gitignore_global
+	editor = vim
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[push]
+	default = current
+[color]
+	diff = auto
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue%an%Creset' --abbrev-commit --date=relative
+	ci = commit -v
+	amend-to = "!f() { SHA=`git rev-parse \"$1\"`; git commit --fixup \"$SHA\" && GIT_SEQUENCE_EDITOR=true git rebase --interactive --autosquash \"$SHA^\"; }; f"
+	merge-develop = "!git fetch -p; git octopus -c `git branch --list -r --merged origin/develop 2> /dev/null | grep -v origin/HEAD | grep -v origin/develop | grep -v origin/master | tr '\n' ' '` origin/`git branch --show-current` origin/master; #"
+	check-merge-develop = "!git fetch -p; git --no-pager octopus -n `git branch --list -r --merged origin/develop 2> /dev/null | grep -v origin/HEAD | grep -v origin/develop | grep -v origin/master | tr '\n' ' '` origin/`git branch --show-current` origin/master; #"
+	merge-master = "!git octopus -c origin/\"$1\"; #"
+	push-develop = push origin +HEAD:develop --force-with-lease --no-verify
+	reset-origin = "!git reset --hard origin/`git branch --show-current`"
+	parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
+[status]
+	showUntrackedFiles = all
+[octopus]
+	commit = true
+	pattern = origin/*
+[remote "origin"]
+	fetch = +refs/conflicts/*:refs/conflicts/*

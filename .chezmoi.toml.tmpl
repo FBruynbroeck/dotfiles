@@ -1,0 +1,8 @@
+{{- $brew_gui := promptBoolOnce . "brew_gui" "Install GUI applications via Homebrew" -}}
+{{- $nickname := promptStringOnce . "nickname" "Your Nickname for git" -}}
+{{- $email := promptStringOnce . "email" "Your Email for git" -}}
+
+[data]
+    brew_gui = {{ $brew_gui }}
+    nickname = {{ $nickname | quote }}
+    email = {{ $email | quote }}

@@ -1,0 +1,56 @@
+[".oh-my-zsh"]
+    type = "git-repo"
+    url = "https://github.com/ohmyzsh/ohmyzsh.git"
+    refreshPeriod = "168h"
+[".oh-my-zsh-custom/plugins/git-prompt.zsh"]
+    type = "git-repo"
+    url = "https://github.com/woefe/git-prompt.zsh.git"
+    refreshPeriod = "168h"
+[".vim/pack/colors/start/vim-airline"]
+    type = "git-repo"
+    url = "https://github.com/vim-airline/vim-airline.git"
+    refreshPeriod = "168h"
+[".vim/pack/colors/start/vim-airline-themes"]
+    type = "git-repo"
+    url = "https://github.com/vim-airline/vim-airline-themes.git"
+    refreshPeriod = "168h"
+[".vim/pack/colors/start/vim-devicons"]
+    type = "git-repo"
+    url = "https://github.com/ryanoasis/vim-devicons.git"
+    refreshPeriod = "168h"
+[".vim/pack/plugins/start/ack.vim"]
+    type = "git-repo"
+    url = "https://github.com/mileszs/ack.vim.git"
+    refreshPeriod = "168h"
+[".vim/pack/plugins/start/copilot.vim"]
+    type = "git-repo"
+    url = "https://github.com/github/copilot.vim.git"
+    refreshPeriod = "168h"
+[".vim/pack/plugins/start/nerdtree"]
+    type = "git-repo"
+    url = "https://github.com/preservim/nerdtree.git"
+    refreshPeriod = "168h"
+[".vim/pack/plugins/start/nerdtree-git-plugin"]
+    type = "git-repo"
+    url = "https://github.com/Xuyuanp/nerdtree-git-plugin.git"
+    refreshPeriod = "168h"
+[".vim/pack/plugins/start/vim-commentary"]
+    type = "git-repo"
+    url = "https://github.com/tpope/vim-commentary.git"
+    refreshPeriod = "168h"
+[".vim/pack/plugins/start/vim-fugitive"]
+    type = "git-repo"
+    url = "https://github.com/tpope/vim-fugitive.git"
+    refreshPeriod = "168h"
+[".vim/pack/plugins/start/vim-gitgutter"]
+    type = "git-repo"
+    url = "https://github.com/airblade/vim-gitgutter.git"
+    refreshPeriod = "168h"
+[".vim/pack/plugins/start/vim-template"]
+    type = "git-repo"
+    url = "https://github.com/aperezdc/vim-template.git"
+    refreshPeriod = "168h"
+[".vim/pack/syntax/start/ale"]
+    type = "git-repo"
+    url = "https://github.com/dense-analysis/ale.git"
+    refreshPeriod = "168h"
